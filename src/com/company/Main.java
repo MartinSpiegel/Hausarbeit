@@ -1,7 +1,5 @@
 package com.company;
 
-import org.ejml.simple.SimpleMatrix;
-
 import java.util.Scanner;
 
 public class Main {
@@ -78,37 +76,22 @@ public class Main {
         System.out.println("Jacobi-Verfahren");
         System.out.println("-----------------------");
 
-        SimpleMatrix simpleMatrixA = new SimpleMatrix(new double[][]{
-                {10, -1, 2, 0},
-                {-1, 11, -1, 3},
-                {2, -1, 10, -1},
-                {0, 3, -1, 8},
-        });
-        SimpleMatrix simpleMatrixXZero = new SimpleMatrix(new double[][]{
-                {3},
-                {4},
-                {2},
-                {5},
-        });
-        SimpleMatrix simpleMatrixB = new SimpleMatrix(new double[][]{
-                {6},
-                {25},
-                {-11},
-                {15},
-        });
-
-        Calculator.calc(Procedure.JACOBI, simpleMatrixA, simpleMatrixXZero, simpleMatrixB);
+        Calculator.calc(Procedure.JACOBI);
     }
 
     private static void runGaussSeidel() {
 
         System.out.println("Gauß-Seidel-Verfahren");
         System.out.println("-----------------------");
+
+        Calculator.calc(Procedure.GAUSS_SEIDEL);
     }
 
     private static void runSor() {
 
         System.out.println("Successive Overrelaxation (SOR)");
         System.out.println("-----------------------");
+
+        Calculator.calc(Procedure.SOR);
     }
 }
